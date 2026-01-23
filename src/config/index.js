@@ -39,7 +39,39 @@ const config = {
   pagination: {
     defaultPage: 1,
     defaultLimit: 10,
-    maxLimit: 100
+    maxLimit: 100,
+    message: {
+      success: false,
+      error: { message: 'Too many requests', code: 'RATE_LIMITED', status: 429 },
+    },
+    standardHeaders: true,
+    legacyHeaders: false,
+    skipSuccessfulRequests: true,
+    skipFailedRequests: true,
+    skip: (req, res) => {
+      return res.statusCode < 400;
+    },
+    keyGenerator: (req) => {
+      return req.ip;
+    },
+    handler: (req, res, next) => {
+      return res.status(429).json({
+        success: false,
+        error: { message: 'Too many requests', code: 'RATE_LIMITED', status: 429 },
+      });
+    },
+    onLimitReached: (req, res, next) => {
+      return res.status(429).json({
+        success: false,
+        error: { message: 'Too many requests', code: 'RATE_LIMITED', status: 429 },
+      });
+    },
+    onRateLimited: (req, res, next) => {
+      return res.status(429).json({
+        success: false,
+        error: { message: 'Too many requests', code: 'RATE_LIMITED', status: 429 },
+      });
+    },
   },
   
   // Content settings

@@ -95,6 +95,16 @@ const getCommentStats = async (req, res, next) => {
   }
 };
 
+const getCommentReplies = async (req, res, next) => {
+  try {
+    const { commentId } = req.params;
+    const { replies } = await commentService.getCommentReplies(commentId);
+    sendSuccess(res, replies);
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   createComment,
   getPostComments,

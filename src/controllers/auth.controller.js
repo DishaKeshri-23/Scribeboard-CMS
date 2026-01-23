@@ -72,6 +72,45 @@ const changePassword = async (req, res, next) => {
   }
 };
 
+const forgotPassword = async (req, res, next) => {
+  try {
+    const { email } = req.body;
+    const result = await authService.forgotPassword(email);
+    sendSuccess(res, result, 'Password reset email sent');
+  } catch (error) {
+    next(error);
+  }
+};
+
+const resetPassword = async (req, res, next) => {
+  try {
+    const { token, password } = req.body;
+    const result = await authService.resetPassword(token, password);
+    sendSuccess(res, result, 'Password reset successfully');
+  } catch (error) {
+    next(error);
+  }
+};
+
+const verifyEmail = async (req, res, next) => {
+  try {
+    const { token } = req.body;
+    const result = await authService.verifyEmail(token);
+    sendSuccess(res, result, 'Email verified successfully');
+  } catch (error) {
+    next(error);
+  }
+};
+
+const resendVerificationEmail = async (req, res, next) => {
+  try {
+    const { email } = req.body;
+    const result = await authService.resendVerificationEmail(email);
+    sendSuccess(res, result, 'Verification email resent');
+  } catch (error) {
+    next(error);
+  }
+};
 module.exports = {
   register,
   login,

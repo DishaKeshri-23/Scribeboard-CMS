@@ -50,6 +50,15 @@ const deleteCategory = async (req, res, next) => {
   }
 };
 
+const getCategoryPosts = async (req, res, next) => {
+  try {
+    const { categoryId } = req.params;
+    const { posts, pagination } = await categoryService.getCategoryPosts(categoryId, req.query);
+    sendPaginated(res, posts, pagination);
+  } catch (error) {
+    next(error);
+  }
+};
 module.exports = {
   createCategory,
   getCategories,
