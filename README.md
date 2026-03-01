@@ -13,7 +13,8 @@ A full-fledged **Blog CMS Backend Service** with authors, posts, categories, com
 - **Pagination**: Efficient data loading
 - **Revision History**: Track post changes
 
-- **Tech Stack**
+ ✨**Tech Stack**
+ 
 - Node.js
 • Express.js
 • Prisma ORM
@@ -22,7 +23,8 @@ A full-fledged **Blog CMS Backend Service** with authors, posts, categories, com
 • Environment Variables Configuration
 • Cloud Deployment on Railway
 
-**Deployment**
+✨**Deployment**
+
 The backend is deployed on Railway with a cloud-hosted MySQL database.
 
 scribeboard/
