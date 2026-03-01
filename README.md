@@ -13,6 +13,18 @@ A full-fledged **Blog CMS Backend Service** with authors, posts, categories, com
 - **Pagination**: Efficient data loading
 - **Revision History**: Track post changes
 
+- **Tech Stack**
+- Node.js
+• Express.js
+• Prisma ORM
+• MySQL Database
+• REST API Architecture
+• Environment Variables Configuration
+• Cloud Deployment on Railway
+
+**Deployment**
+The backend is deployed on Railway with a cloud-hosted MySQL database.
+
 scribeboard/
 ├── prisma/
 │   ├── schema.prisma      # Database schema
