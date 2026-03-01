@@ -27,7 +27,8 @@ A full-fledged **Blog CMS Backend Service** with authors, posts, categories, com
 
 The backend is deployed on Railway with a cloud-hosted MySQL database.
 
-scribeboard/
+✨**scribeboard folder structure**
+
 ├── prisma/
 │   ├── schema.prisma      # Database schema
 │   └── seed.js            # Seed data
